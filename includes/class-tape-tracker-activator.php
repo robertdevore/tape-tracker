@@ -23,13 +23,23 @@
 class Tape_Tracker_Activator {
 
 	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
+	 * Run on activation
 	 *
 	 * @since    0.0.1
 	 */
 	public static function activate() {
+		/**
+		 * Tapes CPT.
+		 */
+		tape_tracker_tapes();
+
+		/**
+		 * Flush Rewrite Rules
+		 */
+		global $wp_rewrite;
+		$wp_rewrite->init();
+		$wp_rewrite->flush_rules();
+
 
 	}
 
