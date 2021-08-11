@@ -28,10 +28,18 @@ class Tape_Tracker_Activator {
 	 * @since    0.0.1
 	 */
 	public static function activate() {
-		/**
-		 * Tapes CPT.
-		 */
+		// Tapes CPT.
 		tape_tracker_tapes();
+		// Tapes taxonomies.
+		tape_tracker_taxonomy_cast_members();
+		tape_tracker_taxonomy_collections();
+		tape_tracker_taxonomy_directors();
+		tape_tracker_taxonomy_genres();
+		tape_tracker_taxonomy_languages();
+		tape_tracker_taxonomy_producers();
+		tape_tracker_taxonomy_ratings();
+		tape_tracker_taxonomy_subtitles();
+		tape_tracker_taxonomy_writers();
 
 		/**
 		 * Flush Rewrite Rules
@@ -39,7 +47,6 @@ class Tape_Tracker_Activator {
 		global $wp_rewrite;
 		$wp_rewrite->init();
 		$wp_rewrite->flush_rules();
-
 
 	}
 
