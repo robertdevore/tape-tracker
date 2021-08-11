@@ -45,7 +45,7 @@ function tape_tracker_taxonomy_collections() {
 	);
 
 	register_taxonomy( 'collections', 'tape_tracker_tapes', array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_in_rest'          => true,

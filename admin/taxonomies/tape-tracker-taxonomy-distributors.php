@@ -45,7 +45,7 @@ function tape_tracker_taxonomy_distributors() {
 	);
 
 	register_taxonomy( 'distributors', 'tape_tracker_tapes', array(
-		'hierarchical'          => false,
+		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
 		'show_in_rest'          => true,
