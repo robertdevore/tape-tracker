@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_languages() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Languages', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Language', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Languages', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_languages() {
 		'choose_from_most_used'      => __( 'Choose from the most used languages', 'tape-tracker' ),
 		'not_found'                  => __( 'No languages found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Languages', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'languages', 'tape_tracker_tapes', array(
+	register_taxonomy( 'languages', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_languages() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'language',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_languages', 0 );

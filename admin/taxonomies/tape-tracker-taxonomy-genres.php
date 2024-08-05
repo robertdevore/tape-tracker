@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_genres() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Genres', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Genre', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Genres', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_genres() {
 		'choose_from_most_used'      => __( 'Choose from the most used genres', 'tape-tracker' ),
 		'not_found'                  => __( 'No genres found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Genres', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'genres', 'tape_tracker_tapes', array(
+	register_taxonomy( 'genres', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_genres() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'genre',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_genres', 0 );

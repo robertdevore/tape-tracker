@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_subtitles() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Subtitles', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Subtitle', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Subtitles', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_subtitles() {
 		'choose_from_most_used'      => __( 'Choose from the most used subtitles', 'tape-tracker' ),
 		'not_found'                  => __( 'No subtitles found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Subtitles', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'subtitles', 'tape_tracker_tapes', array(
+	register_taxonomy( 'subtitles', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_subtitles() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'subtitle',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_subtitles', 0 );

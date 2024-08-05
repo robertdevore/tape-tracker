@@ -20,7 +20,7 @@ if ( ! function_exists( 'tape_tracker_tapes' ) ) {
     // Register Custom Post Type.
     function tape_tracker_tapes() {
 
-        $labels = array(
+        $labels = [
             'name'                  => _x( 'Tape Tracker', 'Post Type General Name', 'tape-tracker' ),
             'singular_name'         => _x( 'Tape', 'Post Type Singular Name', 'tape-tracker' ),
             'menu_name'             => __( 'Tape Tracker', 'tape-tracker' ),
@@ -48,19 +48,19 @@ if ( ! function_exists( 'tape_tracker_tapes' ) ) {
             'items_list'            => __( 'Tapes list', 'tape-tracker' ),
             'items_list_navigation' => __( 'Tapes list navigation', 'tape-tracker' ),
             'filter_items_list'     => __( 'Filter tapes list', 'tape-tracker' ),
-        );
-        $rewrite = array(
+        ];
+        $rewrite = [
             'slug'                  => 'tape',
             'with_front'            => true,
             'pages'                 => true,
             'feeds'                 => true,
-        );
-        $args = array(
+        ];
+        $args = [
             'label'                 => __( 'Tape Tracker', 'tape-tracker' ),
             'description'           => __( 'Organize and display your VHS collection', 'tape-tracker' ),
             'labels'                => $labels,
-            'supports'              => array( 'title', 'editor', 'thumbnail' ),
-            'taxonomies'            => array(),
+            'supports'              => [ 'title', 'editor', 'thumbnail' ],
+            'taxonomies'            => [],
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
@@ -77,8 +77,8 @@ if ( ! function_exists( 'tape_tracker_tapes' ) ) {
             'rewrite'               => $rewrite,
             'capability_type'       => 'post',
             'show_in_rest'          => true,
-            'rest_base'             => 'tapes',
-        );
+            //'rest_base'             => 'tapes',
+        ];
         register_post_type( 'tape_tracker_tapes', $args );
 
     }

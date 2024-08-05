@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_distributors() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Distributors', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Distributor', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Distributors', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_distributors() {
 		'choose_from_most_used'      => __( 'Choose from the most used distributors', 'tape-tracker' ),
 		'not_found'                  => __( 'No distributors found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Distributors', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'distributors', 'tape_tracker_tapes', array(
+	register_taxonomy( 'distributors', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_distributors() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'distributor',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_distributors', 0 );

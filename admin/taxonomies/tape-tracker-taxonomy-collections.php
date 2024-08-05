@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_collections() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Collections', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Collection', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Collections', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_collections() {
 		'choose_from_most_used'      => __( 'Choose from the most used collections', 'tape-tracker' ),
 		'not_found'                  => __( 'No collections found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Collections', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'collections', 'tape_tracker_tapes', array(
+	register_taxonomy( 'collections', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_collections() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'collection',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_collections', 0 );

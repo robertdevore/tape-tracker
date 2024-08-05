@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_writers() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Writers', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Writer', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Writers', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_writers() {
 		'choose_from_most_used'      => __( 'Choose from the most used writers', 'tape-tracker' ),
 		'not_found'                  => __( 'No writers found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Writers', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'writers', 'tape_tracker_tapes', array(
+	register_taxonomy( 'writers', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_writers() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'writer',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_writers', 0 );

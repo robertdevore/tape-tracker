@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_ratings() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Ratings', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Rating', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Ratings', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_ratings() {
 		'choose_from_most_used'      => __( 'Choose from the most used ratings', 'tape-tracker' ),
 		'not_found'                  => __( 'No ratings found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Ratings', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'ratings', 'tape_tracker_tapes', array(
+	register_taxonomy( 'ratings', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_ratings() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'rating',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_ratings', 0 );

@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function tape_tracker_taxonomy_directors() {
 
-	$labels = array(
+	$labels = [
 		'name'                       => _x( 'Directors', 'general name', 'tape-tracker' ),
 		'singular_name'              => _x( 'Director', 'singular name', 'tape-tracker' ),
 		'search_items'               => __( 'Search Directors', 'tape-tracker' ),
@@ -42,9 +42,9 @@ function tape_tracker_taxonomy_directors() {
 		'choose_from_most_used'      => __( 'Choose from the most used directors', 'tape-tracker' ),
 		'not_found'                  => __( 'No directors found', 'tape-tracker' ),
 		'menu_name'                  => __( 'Directors', 'tape-tracker' ),
-	);
+	];
 
-	register_taxonomy( 'directors', 'tape_tracker_tapes', array(
+	register_taxonomy( 'directors', 'tape_tracker_tapes', [
 		'hierarchical'          => true,
 		'labels'                => $labels,
 		'show_ui'               => true,
@@ -53,10 +53,10 @@ function tape_tracker_taxonomy_directors() {
 		'show_in_nav_menus'     => true,
 		'query_var'             => true,
 		'update_count_callback' => '_update_post_term_count',
-		'rewrite'               => array(
+		'rewrite'               => [
 			'slug' => 'director',
-		),
-	) );
+        ],
+	] );
 
 }
 add_action( 'init', 'tape_tracker_taxonomy_directors', 0 );

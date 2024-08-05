@@ -61,7 +61,7 @@ class Tape_Tracker_Public {
 	 */
 	public function enqueue_styles() {
 		// Public CSS - General.
-		// wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/tape-tracker-public.css', array(), $this->version, 'all' );
+		// wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/tape-tracker-public.css', [], $this->version, 'all' );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class Tape_Tracker_Public {
 	 */
 	public function enqueue_scripts() {
 		// Public JS - General.
-		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/tape-tracker-public.js', array( 'jquery' ), $this->version, false );
+		// wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/tape-tracker-public.js', [ 'jquery' ], $this->version, false );
 	}
 
 }
